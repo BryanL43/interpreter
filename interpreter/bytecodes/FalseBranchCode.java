@@ -12,10 +12,10 @@ public class FalseBranchCode implements ByteCode, Jumpable, Verbose {
 
     @Override
     public void execute(VirtualMachine vm) {
-        if(vm.peek() == 0){
+        if (vm.peek() == 0){ //If 0 jumps to label aka if-statement is true.
             vm.pop(1);
             vm.jump(resolvedAddress);
-        } else {
+        } else { //If not 0 then continue to next operation aka if-statement is false.
             vm.pop(1);
         }
     }

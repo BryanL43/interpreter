@@ -2,17 +2,17 @@ package interpreter.bytecodes;
 
 import interpreter.virtualmachine.VirtualMachine;
 
-public class BopCode implements ByteCode {
+public class BopCode implements ByteCode, Verbose {
     private String operator;
 
     public BopCode(String[] args) {
-        this.operator = args[0];
+        operator = args[0];
     }
 
     @Override
     public void execute(VirtualMachine vm) {
-        int firstOperand = vm.pop(1);
         int secondOperand = vm.pop(1);
+        int firstOperand = vm.pop(1);
 
         switch(operator) {
             case "+" -> vm.push(firstOperand + secondOperand);

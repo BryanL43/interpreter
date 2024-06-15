@@ -27,7 +27,7 @@ public interface ByteCode {
             case "READ" -> new ReadCode();
             case "WRITE" -> new WriteCode();
             case "LABEL" -> new LabelCode(args);
-
+            case "VERBOSE" -> new VerboseCode(args);
             default -> throw new IllegalArgumentException("Unexpected ByteCode type: " + type);
         };
     }

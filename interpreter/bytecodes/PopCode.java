@@ -2,9 +2,9 @@ package interpreter.bytecodes;
 
 import interpreter.virtualmachine.VirtualMachine;
 
-public class PopCode implements ByteCode {
+public class PopCode implements ByteCode, Verbose {
     private int numOfPop;
-    private String amountOfPop;
+    private String executedPop;
 
     public PopCode(String[] args) {
         numOfPop = Integer.parseInt(args[0]);
@@ -12,14 +12,14 @@ public class PopCode implements ByteCode {
 
     @Override
     public void execute(VirtualMachine vm) {
-        amountOfPop = Integer.toString(vm.pop(numOfPop));
+        executedPop = Integer.toString(vm.pop(numOfPop));
     }
 
     @Override
     public String toString() {
-        String base = "POP";
-        if (amountOfPop != null){
-            base += " " + amountOfPop;
+        String base = "POP " + numOfPop;
+        if (executedPop != null){
+            base += " " + numOfPop;
         }
         return base;
     }

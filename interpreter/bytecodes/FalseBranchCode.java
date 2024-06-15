@@ -2,7 +2,7 @@ package interpreter.bytecodes;
 
 import interpreter.virtualmachine.VirtualMachine;
 
-public class FalseBranchCode implements ByteCode, Jumpable {
+public class FalseBranchCode implements ByteCode, Jumpable, Verbose {
     private String label;
     private int resolvedAddress; //int as it is the line number (stack position)
 
@@ -12,9 +12,11 @@ public class FalseBranchCode implements ByteCode, Jumpable {
 
     @Override
     public void execute(VirtualMachine vm) {
-        //vm.pop takes arg to execute number of times of pop
-        if (vm.pop(1) == 0) {
+        if(vm.peek() == 0){
+            vm.pop(1);
             vm.jump(resolvedAddress);
+        } else {
+            vm.pop(1);
         }
     }
 

@@ -2,7 +2,7 @@ package interpreter.bytecodes;
 
 import interpreter.virtualmachine.VirtualMachine;
 
-public class LoadCode implements ByteCode {
+public class LoadCode implements ByteCode, Verbose {
     private int offSet;
     private String id;
 

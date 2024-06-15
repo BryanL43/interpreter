@@ -2,7 +2,7 @@ package interpreter.bytecodes;
 
 import interpreter.virtualmachine.VirtualMachine;
 
-public class ReturnCode implements ByteCode, Jumpable {
+public class ReturnCode implements ByteCode, Jumpable, Verbose {
     private int resolvedAddress;
     private String id;
     private String value;

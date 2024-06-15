@@ -2,7 +2,7 @@ package interpreter.bytecodes;
 
 import interpreter.virtualmachine.VirtualMachine;
 
-public class LitCode implements ByteCode {
+public class LitCode implements ByteCode, Verbose {
     private int value;
     private String id; //The variable name
 
@@ -23,7 +23,7 @@ public class LitCode implements ByteCode {
     public String toString() {
         String base = "LIT " + value;
         if (id != null) {
-            base += " " + id;
+            base += " " + id + "\tint " + id;
         }
         return base;
     }

@@ -3,6 +3,7 @@ package interpreter.virtualmachine;
 import java.util.Stack;
 
 import interpreter.bytecodes.ByteCode;
+import interpreter.bytecodes.Verbose;
 import interpreter.loaders.Program;
 
 public class VirtualMachine {
@@ -27,6 +28,10 @@ public class VirtualMachine {
         while (isRunning) {
             ByteCode code = program.getCode(programCounter);
             code.execute(this);
+            if (verboseEnabled && code instanceof Verbose) {
+                System.out.println(code);
+                System.out.println(runTimeStack.verboseDisplay());
+            }
             programCounter++;
         }
     }
@@ -150,13 +155,16 @@ public class VirtualMachine {
      */
     public String getLabel(String byteCode) {
         String[] parseByteCode = byteCode.split("\\s+");
-
         if (parseByteCode.length > 1) {
             return parseByteCode[1];
         }
         return null;
     }
 
+    /**
+     * Gets the values of the top frame.
+     * @return the values of the top frame.
+     */
     public String getFrameValues() {
         String[] frames = runTimeStack.verboseDisplay().split("[\\[\\]]");
         return frames[frames.length - 1];

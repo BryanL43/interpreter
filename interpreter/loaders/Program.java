@@ -60,15 +60,25 @@ public class Program {
         VirtualMachine vm = new VirtualMachine(this);
 
         int index = 0;
+        //Assign the appropriate index to the ByteCode that uses label
         for (ByteCode c : program) {
-            //if (c instanceof ReturnCode) {
-                //c.execute(vm);
-                System.out.println(c);
-            //}
-            //System.out.println("In resolveAdd: " + c.toString());
-//            if (c instanceof Jumpable) {
-//                String label = vm.getLabel(c.toString());
-//            }
+            if (c instanceof Label) {
+                String label = vm.getLabel(c.toString());
+                labelAddress.put(label, index);
+            }
+            index++;
+        }
+
+        //Resolve the address of the ByteCodes that jumps. Assigns the index to label.
+        for (ByteCode c : program) {
+            if (c instanceof Jumpable) {
+                String label = vm.getLabel(c.toString());
+                if (label != null) {
+                    int address = labelAddress.get(label);
+                    Jumpable bytecode = (Jumpable) c;
+                    bytecode.setAddress(address);
+                }
+            }
         }
     }
 }   

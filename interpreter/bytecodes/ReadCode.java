@@ -4,7 +4,7 @@ import interpreter.virtualmachine.VirtualMachine;
 
 import java.util.Scanner;
 
-public class ReadCode implements ByteCode {
+public class ReadCode implements ByteCode, Label, Verbose {
     public ReadCode() {
         //Instantiate ReadCode but does nothing
     }

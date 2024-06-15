@@ -2,7 +2,7 @@ package interpreter.bytecodes;
 
 import interpreter.virtualmachine.VirtualMachine;
 
-public class CallCode implements ByteCode, Jumpable {
+public class CallCode implements ByteCode, Jumpable, Verbose {
     private String id;
     private int resolvedAddress;
     private String args;

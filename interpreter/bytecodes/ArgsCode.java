@@ -2,7 +2,7 @@ package interpreter.bytecodes;
 
 import interpreter.virtualmachine.VirtualMachine;
 
-public class ArgsCode implements ByteCode {
+public class ArgsCode implements ByteCode, Verbose {
     private int offSetFromTop;
 
     public ArgsCode(String[] args) {

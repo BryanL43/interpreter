@@ -3,7 +3,7 @@ package interpreter.virtualmachine;
 import java.util.Stack;
 
 import interpreter.bytecodes.ByteCode;
-import interpreter.bytecodes.Verbose;
+import interpreter.bytecodes.HaltCode;
 import interpreter.loaders.Program;
 
 public class VirtualMachine {
@@ -28,7 +28,7 @@ public class VirtualMachine {
         while (isRunning) {
             ByteCode code = program.getCode(programCounter);
             code.execute(this);
-            if (verboseEnabled && code instanceof Verbose) {
+            if (verboseEnabled && !(code instanceof HaltCode)) {
                 System.out.println(code);
                 System.out.println(runTimeStack.verboseDisplay());
             }

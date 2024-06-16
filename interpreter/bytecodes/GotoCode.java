@@ -2,7 +2,7 @@ package interpreter.bytecodes;
 
 import interpreter.virtualmachine.VirtualMachine;
 
-public class GotoCode implements ByteCode, Jumpable, Verbose {
+public class GotoCode implements ByteCode, Jumpable {
     private int resolvedAddress; //int as it is the line number (stack position)
     private String label;
 

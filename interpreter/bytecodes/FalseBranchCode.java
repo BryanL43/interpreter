@@ -2,7 +2,7 @@ package interpreter.bytecodes;
 
 import interpreter.virtualmachine.VirtualMachine;
 
-public class FalseBranchCode implements ByteCode, Jumpable, Verbose {
+public class FalseBranchCode implements ByteCode, Jumpable {
     private String label;
     private int resolvedAddress; //int as it is the line number (stack position)
 

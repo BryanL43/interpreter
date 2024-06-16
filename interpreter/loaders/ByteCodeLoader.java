@@ -1,7 +1,6 @@
 package interpreter.loaders;
 
 import interpreter.bytecodes.ByteCode;
-import interpreter.loaders.Program;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -34,7 +33,7 @@ public final class ByteCodeLoader {
                 String line = myReader.nextLine();
                 String[] parts = line.split("\\s+");
 
-                String byteCodeName = parts[0];
+                String byteCodeName = CodeTable.getClassName(parts[0]);
                 String[] args = new String[parts.length - 1];
                 System.arraycopy(parts, 1, args, 0, args.length);
 

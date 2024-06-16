@@ -2,7 +2,7 @@ package interpreter.bytecodes;
 
 import interpreter.virtualmachine.VirtualMachine;
 
-public class BopCode implements ByteCode, Verbose {
+public class BopCode implements ByteCode {
     private String operator;
 
     public BopCode(String[] args) {

@@ -2,7 +2,7 @@ package interpreter.bytecodes;
 
 import interpreter.virtualmachine.VirtualMachine;
 
-public class LitCode implements ByteCode, Verbose {
+public class LitCode implements ByteCode {
     private int value;
     private String id; //The variable name
 

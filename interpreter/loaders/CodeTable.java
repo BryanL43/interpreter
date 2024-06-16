@@ -38,7 +38,6 @@ public final class CodeTable {
 
    /**
     * Returns the ByteCode class name for a given token.
-    * 
     * @param token bytecode to map. For example, HALT --> HaltCode
     * @return class name of bytecode
     */

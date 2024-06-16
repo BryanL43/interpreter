@@ -13,21 +13,21 @@ public interface ByteCode {
      */
     static ByteCode getInstance(String type, String[] args) {
         return switch(type) {
-            case "HALT" -> new HaltCode();
-            case "POP" -> new PopCode(args);
-            case "FALSEBRANCH" -> new FalseBranchCode(args);
-            case "GOTO" -> new GotoCode(args);
-            case "STORE" -> new StoreCode(args);
-            case "LOAD" -> new LoadCode(args);
-            case "LIT" -> new LitCode(args);
-            case "ARGS" -> new ArgsCode(args);
-            case "CALL" -> new CallCode(args);
-            case "RETURN" -> new ReturnCode(args);
-            case "BOP" -> new BopCode(args);
-            case "READ" -> new ReadCode();
-            case "WRITE" -> new WriteCode();
-            case "LABEL" -> new LabelCode(args);
-            case "VERBOSE" -> new VerboseCode(args);
+            case "HaltCode" -> new HaltCode();
+            case "PopCode" -> new PopCode(args);
+            case "FalseBranchCode" -> new FalseBranchCode(args);
+            case "GotoCode" -> new GotoCode(args);
+            case "StoreCode" -> new StoreCode(args);
+            case "LoadCode" -> new LoadCode(args);
+            case "LitCode" -> new LitCode(args);
+            case "ArgsCode" -> new ArgsCode(args);
+            case "CallCode" -> new CallCode(args);
+            case "ReturnCode" -> new ReturnCode(args);
+            case "BopCode" -> new BopCode(args);
+            case "ReadCode" -> new ReadCode();
+            case "WriteCode" -> new WriteCode();
+            case "LabelCode" -> new LabelCode(args);
+            case "VerboseCode" -> new VerboseCode(args);
             default -> throw new IllegalArgumentException("Unexpected ByteCode type: " + type);
         };
     }

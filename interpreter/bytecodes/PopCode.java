@@ -2,7 +2,7 @@ package interpreter.bytecodes;
 
 import interpreter.virtualmachine.VirtualMachine;
 
-public class PopCode implements ByteCode, Verbose {
+public class PopCode implements ByteCode {
     private int numOfPop;
     private String executedPop;
 

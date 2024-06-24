@@ -17,10 +17,6 @@ public class PopCode implements ByteCode {
 
     @Override
     public String toString() {
-        String base = "POP " + numOfPop;
-        if (executedPop != null){
-            base += " " + numOfPop;
-        }
-        return base;
+        return "POP " + numOfPop;
     }
 }

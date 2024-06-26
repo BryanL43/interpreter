@@ -2,7 +2,7 @@ package interpreter.bytecodes;
 
 import interpreter.virtualmachine.VirtualMachine;
 
-public class WriteCode implements ByteCode, Label {
+public class WriteCode implements ByteCode {
     public WriteCode() {
         //Instantiate WriteCode but does nothing
     }

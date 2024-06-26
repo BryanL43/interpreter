@@ -60,9 +60,9 @@ public class Program {
         VirtualMachine vm = new VirtualMachine(this);
 
         int index = 0;
-        //Assign the appropriate index to the ByteCode that uses label
+        //Assign the appropriate index to the label Bytecodes
         for (ByteCode c : program) {
-            if (c instanceof Label) {
+            if (c instanceof LabelCode) {
                 String label = vm.getLabel(c.toString());
                 labelAddress.put(label, index);
             }

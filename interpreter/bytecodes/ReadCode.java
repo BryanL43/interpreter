@@ -14,15 +14,14 @@ public class ReadCode implements ByteCode {
         boolean isValid = false;
 
         while (!isValid) {
-            try(Scanner input = new Scanner(System.in)) {
-                System.out.print("Please enter an integer: ");
-                try {
-                    int value = input.nextInt();
-                    isValid = true;
-                    vm.push(value);
-                } catch (Exception e) {
-                    System.out.println("Invalid Input!");
-                }
+            Scanner input = new Scanner(System.in);
+            System.out.print("Please enter an integer: ");
+            try {
+                int value = input.nextInt();
+                isValid = true;
+                vm.push(value);
+            } catch (Exception e) {
+                System.out.println("Invalid Input!");
             }
         }
     }
